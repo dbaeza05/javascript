@@ -1,0 +1,172 @@
+<html>
+<head>
+ <title> algoritmo</title>
+
+<script type="text/javascript">
+function a(b){
+for (var i =1; i<=255; i++) {
+	console.log(i);
+	}
+}
+a();
+
+//ejercicio 2
+function sumarpar(){
+	sum=0;
+	for (var i =0; i<=1000; i++){
+		if(i%2==0){
+			sum=sum+i;
+		}
+	}	
+	return sum;
+}
+console.log(sumarpar());
+
+//ejercicio 3
+function sumarimpar(){
+	sum=0;
+	for (var i =0; i<5000; i++){
+			i=i+1;
+			sum=sum+i;
+		}	
+	return sum;
+}
+console.log(sumarimpar());
+
+//ejercicio 4
+function sumar(){
+	sum=0;
+	for (var i =0; i<x.length; i++){
+		sum=sum+x[i];
+	}
+	return sum;
+}
+x=[1,2,5];
+console.log(sumar());
+
+//ejercicio 5
+function max(x){
+	var max=x[0];
+	var min=x[0];
+	for (var i =0; i<x.length; i++){
+		if(x[i]> max){
+			max=x[i];
+		}
+	}
+	return max;
+}
+x=[2,8,7,3]
+console.log(max(x));
+
+//ejercicio 6
+function average(x){
+	var sum=0
+	var avg=0
+	for (var i =0; i<x.length; i++){
+		sum=sum+x[i];
+		avg=sum/x.length;
+}
+return avg;
+}
+x=[6,5,10,12]
+console.log(average(x));
+
+//ejercicio 7
+function arrayimpares(){
+	z=[]
+	for(var i=0; i<50;i++){
+		i=i+1;
+			z.push(i);
+	}
+		return z;
+}
+console.log(arrayimpares());
+
+//ejercicio 8
+function mayorquey(x){
+	var max=x[0];
+	var y=4;
+	var counter=0;
+	for(i=0; i<x.length; i++){
+		if(x[i]>y){
+		counter=counter+1;
+	}
+}
+	return counter;
+}
+x=[5,9,7,3,10,1]
+console.log(mayorquey(x));
+
+//ejeercicio 9
+function reemplazo(x){
+	for(i=0; i<x.length;i++){
+		x[i]=x[i]*x[i];
+	}
+	return x;
+}
+x=[4,5,8,1]
+console.log(reemplazo(x));
+
+//ejercicio 10
+function reemplazo_negativos(x){
+	for(i=0; i<x.length; i++){
+		if(x[i]<0){
+			x[i]=0;
+		}
+	}
+	return x;
+}
+x=[-3,-5,1,-9];
+console.log(reemplazo_negativos(x));
+
+//ejercicio 11
+function max_min_avg(x){
+	var max=x[0];
+	var min=x[0];
+	var sum=0;
+
+	for(i=0; i<x.length; i++){
+		if(x[i]>max){
+		max=x[i];
+	}
+	if(x[i]<min){
+		min=x[i];
+	}
+	sum=sum+x[i];
+	avg=sum/x.length;
+}
+ return [max,min,avg];
+}
+x=[1,4,7,5,14];
+console.log(max_min_avg(x));
+
+//ejercicio 12
+function intercambiar(x){
+	for(i=0; i<x.length; i++){
+		var temp=x[0];
+		x[0]=x[x.length-1];
+
+		x[x.length-1]=temp;	
+	}
+	return x;
+}
+x=[1,3,7,5,12];
+console.log(intercambiar(x));
+
+//ejercicio 13
+function reemplazar(x){
+	for(i=0; i<x.length; i++){
+		if(x[i]<0){
+			x[i]="Dojo";
+		}
+	}
+	return x;
+}
+x=[5,-2,2,16,-5];
+console.log(reemplazar(x));
+
+</script>
+</head>
+<body>
+</body>
+</html>
