@@ -1,0 +1,211 @@
+<html>
+<head>
+ <title> algoritmo</title>
+
+<script type="text/javascript">
+
+//ejercicio 1
+function reemplazar_positivos(x){
+	for(i=0; i<x.length; i++){
+		if (x[i]>0){
+			x[i]="grande";
+		}
+	}
+	return x;
+}
+x=[-1,-8,3,-6,5];
+console.log(reemplazar_positivos(x));
+
+//ejercicio 2
+function printmin_returnmax(x){
+var min=x[0];
+var max=[0];
+for(i=0;i<x.length; i++){
+	if(x[i]<min){
+		min=x[i];
+	}
+if(x[i]>max){
+	max=x[i];
+	}
+}
+console.log(min);
+return max;
+}
+x=[2,7,9,4,10];
+
+console.log(printmin_returnmax(x));
+
+//ejercicio 3
+function penultimo_impar(x){
+  console.log(x[x.length-2]);
+	for(i=0; i<x.length; i++){
+		
+	if(x[i]%2==1){
+     return x[i];
+		}
+	}	
+}
+x=[6,5,15,3,8];
+console.log(penultimo_impar(x));
+
+//ejercicio 4
+function duplicar(x){
+	for(i=0; i<x.length; i++){
+		x[i]=x[i]*2;
+	}
+	return x;
+}
+x=[1,2,6]
+console.log(duplicar(x));
+
+//ejercicio 5
+function contarpositivos(){
+	var counter=0;
+	for(i=0; i<x.length; i++){
+		if(x[i]>0){
+		counter=counter+1;
+		x[x.length-1]=counter;
+		}
+	}
+	return x;
+}
+x=[-2,-5,7,1,8];
+console.log(contarpositivos());
+
+//ejercicio 6
+function pares_impares(){
+	var imparcounter=0;
+	var parcounter=0;
+	var phrases=["¡que imparcial!","¡es para bien!"];
+
+	for(i=0; i<x.length; i++){
+		if(x[i]%2==1){
+			imparcounter=imparcounter+1;
+			parcounter=0;
+		}
+		else if(x[i]%2==0){
+			parcounter=parcounter+1;
+			imparcounter=0;
+		}
+		 if(imparcounter==3){
+		 	console.log(phrases[0]);
+		 }
+
+		 else if(parcounter==3){
+		 	console.log(phrases[1]);
+		 }
+	}
+}
+var x=[2,11,1,7,3,1,2,4,8,12];
+pares_impares();
+
+//ejercicio 7
+function incrementar(x){
+	for(var i=0; i<x.length; i++){
+		if(x[i]%2==1){
+			array[i]=array[i]+1;
+		}
+	}
+	return array;
+}
+var array=[1,2,6,5,7];
+console.log(incrementar(array));
+
+//ejercicio 8
+function contarletras(array){
+  for(var i=array.length-1; i>0; i--){
+    array[i]=array[i-1].length;
+  }
+  return array;
+}
+  var array=["enero","febrero","marzo","abril"];
+console.log(contarletras(array));
+
+//ejercicio 9
+function incrementar7(x){
+	z=[];
+for(var i=0;i<x.length ;i++){
+	x[i]=x[i]+7;
+	z.push(x[i]);
+	}
+	return z;
+}
+var array=[1,2,3];
+console.log(incrementar7(array));
+
+//ejercicio 10
+function inverso(a){
+  var aux=x[0];
+for(var i = 0; i < x.length/2; i++){
+aux = x[i];
+        x[i] = x[x.length - 1 - i];
+        x[x.length - 1 - i] = aux;
+	}
+return x;
+}
+var x=[1,2,3,4];
+console.log(inverso(x));
+
+ //ejercicio 11
+ function arraynegativos(a){
+ 	for(var i=0; i<array.length; i++){
+ 		if(array[i]>0){
+ 			array[i]=(-array[i]);
+ 		}
+ 	}
+
+ 	return array;
+ }
+ var array=[1,2,-4,-5,3,4]
+ console.log(arraynegativos(array));
+
+ //ejercicio 12
+ function yummy(x){
+  counter=0;
+ 	for(var i=0; i<a.length; i++){
+      if(a[i]=="comida"){
+        console.log("yummy");
+        }
+      if(a[i]!="comida"){
+       counter=counter+1;
+      }
+      if(counter==1){
+         console.log("tengo hambre");
+ 		}
+    }
+ 	}
+var a=["comida","comida",1,2,3,"comida"];
+yummy(a);
+
+//ejercicio 13
+function cambiar(x){
+	for(i=0; i<=x.length; i++){
+		var temp=x[0];
+        var temp2=x[2];
+		x[0]=x[x.length-1];
+		x[x.length-1]=temp;	
+        x[2]=x[x.length-3];
+      x[x.length-3]=temp2;
+	}
+	return x;
+}
+x=[1,6,3,4,8,2];
+console.log(cambiar(x));
+
+//ejercicio 14
+function escalaArray(array,num){
+  for(var i=0; i<array.length; i++){
+    array[i]=array[i]*(num);
+  }
+  return array;
+}
+array=[1,3,5,9,6];
+num=4;
+console.log(escalaArray(array,num));
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
