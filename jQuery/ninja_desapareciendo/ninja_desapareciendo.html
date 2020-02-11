@@ -1,0 +1,48 @@
+<!DOCTYPE hTML>
+<html>
+<head>
+	<title>ninja desapareciendo</title>
+<style type="text/css">
+	img{
+		width: 300px;
+		height: 320px;
+	}
+	button{
+		width: 100px;
+		height: 50px;
+	}
+</style>
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$('img').click(function(){
+			console.log("Ocultando id: "+$('img').attr("id"));
+				$(this).hide("slow");
+		});
+
+	$('button').click(function(){
+		$('img').show();
+		});
+	});
+
+</script>
+</head>
+<body>
+<div class="container">
+	<img src='ninja.jpg' id="img1">
+	<img src='ninja.jpg'  id="img3">
+	<img src='ninja.jpg'  id="img4">
+	<img src='ninja.jpg' id="img5">
+	<img src='ninja.jpg' id="img6">
+	<img src='ninja.jpg' id="img7">
+	<img src='ninja.jpg' id="img8">
+	<img src='ninja.jpg' id="img9">
+</div>
+<button style='background-color: #FFCC99'>Restore</button>
+</body>
+</html>
