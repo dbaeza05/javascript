@@ -29,6 +29,9 @@
 	.button1 .button2 .button3, p{
 		display: inline-block;
 	}
+	.row{
+		background-color: #FFCC99;
+	}
 </style>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -48,20 +51,20 @@ $(document).ready(function(){
 </head>
 <body>
 	<div id="container">
-			<div class="row1">
+			<div class="row">
 				<h1>AddClass</h1>
 				<button class='button1'>AddClass</button>
 				<p class="phrase1">click the button to add class 'red' to this paragraph</p>
 			</div>
 				<hr>
-			<div class="row2">
+			<div class="row">
 				<h1>Slidetoggle</h1>
 				<button class='button2'>Slidetoggle</button>
 				<p class="phrase2">click the button to Slidetoggle a hidden image</p>
 				<img id='imagen' src="michi.jpg" style="display: none">
 			</div>
 			<hr>
-			<div class="row1">
+			<div class="row">
 				<h1>Append</h1>
 				<button class='button3'>Append</button>
 				<p class="phrase3">click the button to append a new paragraph.</p>
