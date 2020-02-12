@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cursor en/fuera</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <style type="text/css">
+  img{
+  	width: 330px;
+  	height: 300px;
+  }
+  body{
+  	
+  }
+  </style>
+ <script type="text/javascript">
+ var temp;
+ $(document).ready(function(){
+ 	$('img').hover(function(){
+	var temp=$(this).attr('src');
+ 		$(this).attr('src',$(this).attr('data-alt-src'));
+ 	$(this).attr('data-alt-src',temp);
+ 		
+ 	});
+
+ });
+ </script>
+
+</head>
+<body>
+<img src="animal1.jpg" data-alt-src='animal5.jpg'>
+<img src="animal2.jpg" data-alt-src='animal6.jpg'>
+<img src="animal3.jpg" data-alt-src='animal7.jpg'>
+<img src="animal4.jpg" data-alt-src='animal8.jpg'>
+
+
+</body>
+</html>
