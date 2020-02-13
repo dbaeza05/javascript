@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+   <script type="text/javascript">
+   var pokedex=function(){
+
+      for(i=1; i<=150; i++){
+        $(".pokemon").append("<img src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png'/>");
+   }
+ }
+
+ $(document).ready(function(){
+  pokedex();
+ });
+   </script>
+  </head>
+  <body>
+    <style>
+      img{
+        margin:10px;
+        outline: 1px solid black;
+      }
+    </style>
+      <div class="pokemon">
+     </div>
+ </body>
+</html> 
