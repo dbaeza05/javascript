@@ -9,12 +9,29 @@
 
   <style type="text/css">
   img{
-  	width: 330px;
-  	height: 300px;
+  	width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 24px;
   }
-  body{
-  	
+.container::before{
+    background-image: url(fondo2.jpg);
+    height: 500px;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
   }
+
   </style>
  <script type="text/javascript">
  var temp;
@@ -31,11 +48,12 @@
 
 </head>
 <body>
-<img src="animal1.jpg" data-alt-src='animal5.jpg'>
-<img src="animal2.jpg" data-alt-src='animal6.jpg'>
-<img src="animal3.jpg" data-alt-src='animal7.jpg'>
-<img src="animal4.jpg" data-alt-src='animal8.jpg'>
-
+<div class="container">
+  <img src="animal1.jpg" data-alt-src='animal5.jpg'>
+  <img src="animal2.jpg" data-alt-src='animal6.jpg'>
+  <img src="animal3.jpg" data-alt-src='animal7.jpg'>
+  <img src="animal4.jpg" data-alt-src='animal8.jpg'>
+</div>
 
 </body>
 </html>
