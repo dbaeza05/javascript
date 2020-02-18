@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pokemon</title>
+    <link rel="stylesheet" type="text/css" href="poke.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+   <script type="text/javascript">
+$(document).ready(function(){
+  $('#pokedex').hide();
+
+      for(i=1; i<=150; i++){
+        $(".container").append("<img class='pokemon' id="+i+" src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png'/>");
+     }
+
+  });
+$(document).on('click','.pokemon', function(){
+  $("#pokedex").show()
+  var id=$(this).attr('id')
+  //solicitud 
+  $.get("https://pokeapi.co/api/v2/pokemon/"+id+"/", function(res) {
+     //name
+    $('#name').html(res.name);
+    //imagen
+    var img_p = "http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+res.id+".png";
+    console.log("id: "+res.id+" img_p : "+img_p);
+     //imagen
+     $('#imagen_pokemon').attr("src",img_p);7
+    var types="";
+     for(var i = 0; i < res.types.length; i++) {
+       types += "<li>" + res.types[i].type.name + "</li>";
+         $('#type_pokemon').html(types)
+         $("#height_pokemon").html(res.height)
+          $("#weight_pokemon").html(res.weight)
+
+        }
+
+      }, "json");
+   });
+
+   </script>
+  </head>
+  <body>
+
+      <div class="container">
+     </div>
+    <div id="pokedex">
+      <div id="information">
+          <h1 id="name"></h1>
+          <img id="imagen_pokemon"/>
+        <div class="row">
+          <h2 id="type">Types:</h2>
+          <ul id="type_pokemon"></ul>
+          <h2>Height:</h2>
+           <ul><li id="height_pokemon"></li></ul>
+          <h2>weight:</h2>
+           <ul><li id="weight_pokemon"></li></ul>
+        </div>
+      </div>
+
+    </div>
+ </body>
+</html> 
