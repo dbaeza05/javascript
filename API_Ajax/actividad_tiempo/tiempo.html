@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pronostico del tiempo</title>
+	 <link rel="stylesheet" type="text/css" href="style.css">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+	    $(document).ready(function(){
+	    	$(".container2").hide();
+	    	$("img").hide();
+
+			$( "#target" ).submit(function( event ) {
+			  //alert( "Handler for .submit() called." );
+			  event.preventDefault();
+			});
+	    	$("#buscar").click(function(){
+	    		$("#container").hide()
+	    		$(".container2").show('slow');
+	    		 $("img").show('slow');
+
+		    	var ubicacion= $("#city").val();
+		    	console.log("buscar");
+		    	 if (ubicacion != '') {
+			    	$.get("http://api.openweathermap.org/data/2.5/weather?q="+ubicacion+"&units=metric&appid=d9187b1ebfd7b83ffd7182061cabf2e8&lang=sp",function(data){
+			                    var tiempo = mostrarinfo(data);
+
+			                    $("#temp").html(tiempo);
+
+			                    function mostrarinfo(data){
+			                    	return  "<h5>"+data.name+"</h5>"+"<h5>Tiempo:"+data.weather[0].description+"</h5>"+"<h5>Temperatura:"+data.main.temp+"° Celsius</h5>"+"<h5>Humedad relativa del aire:"+data.main.humidity+"%</h5>"+"<h5>Viento:"+data.wind.speed+"km/hora</h5>" 
+			                    }
+
+		        	},"json");
+		        }
+	    	});
+	    });
+    </script>
+</head>
+<body>
+	<div id="container">
+				<div id="formulario">
+							<h1>The weather</h1>
+						<form id="target" method="dialog">
+							<label for="city-search">Introducir ciudad</label><br><br>
+							<input type="text" id="city" name="citysearch"><br><br>
+							<input type="submit" id="buscar" value="buscar">
+						</form>
+				</div>
+	<!-- 	<div class="container2">
+			<h1>Pronóstico del tiempo</h1>
+			<img src="weather.gif">
+			    <div  id="temp">
+				</div>
+		</div> -->
+	</div>
+
+		<div class="container2">
+			<div class="row">
+				<h1>Pronóstico del tiempo</h1>
+			<div class="col">
+					<div  id="temp">
+				</div>
+			</div>
+			<div class="col">
+			  <img src="weather.gif">
+			</div>
+		</div>
+
+</body>
+</html>
