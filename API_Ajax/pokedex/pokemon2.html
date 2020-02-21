@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   });
 $(document).on('click','.pokemon', function(){
-  $("#pokedex").show()
+  $("#pokedex").show('slow')
   var id=$(this).attr('id')
   //solicitud 
   $.get("https://pokeapi.co/api/v2/pokemon/"+id+"/", function(res) {
@@ -44,20 +44,20 @@ $(document).on('click','.pokemon', function(){
   <body>
 
       <div class="container">
-     </div>
-    <div id="pokedex">
-      <div id="information">
-          <h1 id="name"></h1>
-          <img id="imagen_pokemon"/>
-        <div class="row">
-          <h2 id="type">Types:</h2>
-          <ul id="type_pokemon"></ul>
-          <h2>Height:</h2>
-           <ul><li id="height_pokemon"></li></ul>
-          <h2>weight:</h2>
-           <ul><li id="weight_pokemon"></li></ul>
-        </div>
       </div>
+      <div id="pokedex">
+        <div id="information">
+            <h1 id="name"></h1>
+            <img id="imagen_pokemon"/>
+          <div class="row">
+              <h2 id="type">Types:</h2>
+              <ul id="type_pokemon"></ul>
+              <h2>Height:</h2>
+               <ul><li id="height_pokemon"></li></ul>
+              <h2>weight:</h2>
+              <ul><li id="weight_pokemon"></li></ul>
+          </div>
+        </div>
 
     </div>
  </body>
